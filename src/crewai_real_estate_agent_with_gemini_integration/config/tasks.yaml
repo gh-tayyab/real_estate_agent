@@ -1,0 +1,81 @@
+---
+property_search_task:
+  description: Receive user inputs for {location}, {pricerange}, {area}, {propertytype},
+    {amenities}, and {keywords}; then return matching property listings using advanced
+    filters, including map-based search.
+  expected_output: A list of matching property listings, each with detailed information
+    aligned to the search criteria.
+  async_execution: false
+  agent: PropertySearch
+listing_management_task:
+  description: Update and manage property listings with current details (descriptions,
+    images, availability); periodically synchronize with external data sources via
+    the Gemini API using {geminiapikey}.
+  expected_output: An updated set of property listings that reflect the most current
+    and accurate information.
+  async_execution: false
+  agent: ListingManager
+market_analysis_task:
+  description: Utilize {geminiapikey} to fetch real-time market data and historical
+    trends based on {location} and {propertytype}; compute a Comparative Market Analysis
+    (CMA) and property valuations incorporating integrated financial calculators for
+    mortgage, EMI, rental yield, and investment returns.
+  expected_output: A comprehensive market analysis report including CMA details, property
+    valuations, and financial calculations.
+  async_execution: false
+  agent: MarketAnalysis
+chat_support_scheduling_task:
+  description: Leverage NLP to interpret user queries regarding property and neighborhood
+    details; integrate with {calendarintegration} to automate scheduling of property
+    visits and send notifications in accordance with {userpreferences}.
+  expected_output: Automated responses to property and neighborhood queries along
+    with scheduled property visits and corresponding notifications.
+  async_execution: false
+  agent: ChatSupportScheduling
+document_automation_task:
+  description: Generate property contracts and legal agreements using {document_template}
+    and incorporate digital signature verification to finalize documents.
+  expected_output: Completed legal documents with digital signature integration that
+    are ready for finalization.
+  async_execution: false
+  agent: DocumentAutomation
+virtual_tour_task:
+  description: Process property images to enable immersive 360° virtual tours; apply
+    image recognition via {geminiapikey} to highlight key property features, ensuring
+    an enhanced interactive viewing experience.
+  expected_output: An interactive 360° virtual tour experience with highlighted property
+    features for user engagement.
+  async_execution: false
+  agent: VirtualTour
+personalization_task:
+  description: Collect and analyze user interaction data from {userprofiledata} to
+    dynamically refine property search results and provide personalized property recommendations.
+  expected_output: A set of personalized property recommendations tailored based on
+    user data and behavior.
+  async_execution: false
+  agent: Personalization
+neighborhood_insights_task:
+  description: Retrieve and display local neighborhood information, including crime
+    rates, school ratings, transportation, and amenities, using {localinfoapi} to
+    support informed decision-making.
+  expected_output: Detailed neighborhood insights that assist users in evaluating
+    property locations effectively.
+  async_execution: false
+  agent: NeighborhoodInsights
+performance_monitoring_task:
+  description: Implement a continuous feedback loop by collecting system performance
+    metrics, user feedback, and usage analytics; alert stakeholders to optimize system
+    functionalities over time.
+  expected_output: A comprehensive performance monitoring report with actionable insights
+    for ongoing system optimization.
+  async_execution: false
+  agent: PerformanceMonitoring
+meeting_scheduling_calling_task:
+  description: Integrate with {meeting_scheduler_api} and {google_calendar_api} to
+    schedule property viewings and meetings, send real-time notifications, and update
+    appointment calendars; initiate voice calls using {calling_assistant_api} for
+    appointment confirmations, reminders, and real-time support.
+  expected_output: Successfully scheduled meetings and property viewings, with completed
+    real-time call notifications and confirmations ensuring seamless communication.
+  async_execution: false
+  agent: MeetingSchedulingCalling
